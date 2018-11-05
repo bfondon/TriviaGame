@@ -1,0 +1,33 @@
+body, html{
+    height: 100%;
+    margin: 0;
+}
+
+header{
+    text-align:center;
+    font-size:32pt;
+}
+
+.bg{
+    background-image: url("../../assets/images/train.jpeg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.main-section{
+    font-family: 'Caveat', cursive;
+    font-size: 18pt;
+    line-height:150%;
+    width: 700px;
+    background:#dfc7ff;
+    opacity:.7;
+    position:relative;
+    left:430px;
+    padding-top:50px;
+}
+
+h3{
+    text-align:center;
+}
