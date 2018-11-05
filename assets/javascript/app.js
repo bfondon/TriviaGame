@@ -4,13 +4,30 @@ setTimeout(function(){
     alert("Sorry - Time's Up!!");
 }, 150000);
 
-var now = new Date().getTime();
-var countdown = now + 150000;
-var distance = now - countdown;
-var minutes = Math.floor((distance % (1000 * 60 * 60 )) / (1000 * 60));
-var seconds = Math.floor((distance % (1000 * 60 )) / 1000 );
+var currentTime = Date.parse(new Date());
+var deadline = new Date(currentTime + 150000);
 
-$("#timer").html = minutes + ":" + seconds + "";
+function getTimeRemaining(){
+    var t = Date.parse(deadline) - Date.parse(new Date());
+    var seconds = Math.floor((t/1000) % 60);
+    var minutes = Math.floor((t/1000/60) %60);
+    return {
+        'minutes': minutes,
+        'seconds': seconds
+    };
+}
+
+function initializeClock(){
+    var timeinterval = setInterval(function(){
+        var t = getTimeRemaining(deadline);
+        $("#clockdiv").text('minutes: ' + t.minutes + '<br>' + 'seconds' + t.seconds + '<br>')();
+        if(t.total<=0){
+            clearInterval(timeinterval);
+        }
+    },150000);
+}
+
+initializeClock('clockdiv', deadline);
     //Timer should probably slide with the page so that it is always visible.
 
    
