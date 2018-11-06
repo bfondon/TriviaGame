@@ -6,4 +6,4 @@ The game was built using html, CSS, and Javascript.
 
 
 **Difficulties**
-I spent a considerable portion of the total time trying to get my timing events to function as expected, with little luck. Unfortunately a late start to the assignment, combined with various roadblocks hampered the completion and styling of the game. I was unable to dynamically create a new div containing elements (correct/incorrect answers) that were triggered on the form submission. I was also having issues with my timer failing to stop when time remaining reached 0m 0s.
+I spent a considerable portion of the total time trying to get my timing events to function as expected, with little luck. Unfortunately a late start to the assignment, combined with various roadblocks hampered the completion and styling of the game. As for actual game functionality, I was also having issues with my timer failing to stop when time remaining reached 0m 0s, and I was having issues with running an if function that appropriately incremented correct/incorrect answer variables and displayed them once the form was submitted.

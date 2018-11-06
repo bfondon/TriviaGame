@@ -29,14 +29,24 @@ function initializeClock(){
 initializeClock();
 
 
-//If the user submits in time, the page refreshes to show that you are done, along with correct/incorrect answers.
-//Not sure how to create a new div with new p elements inside it.
-function finish(){
-$("<p />", { text: "Results:" }).appendTo("#results");
-$("<p />", { text: "Correct:" }).appendTo("#results");
-$("<p />", { text: "Incorrect:" }).appendTo("#results");
+//Variables to track correct and incorrect answers.
+var correct= 0;
+var incorrect= 0;
+
+//If statement that checks for correct answers, and increments the appropriate variable.
+if($("#correct").checked){
+    correct++;
+}else {
+    incorrect++;
 }
 
+//Function that creates new div & elements when the form is submitted
+function finish(){
+$("<p />", { text: "Results" }).appendTo("#results");
+$("<p />", { text: "Correct: " + correct }).appendTo("#results");
+$("<p />", { text: "Incorrect:" + incorrect }).appendTo("#results");
+}
+//When submit is clicked, run the above function.
 $("#submit").click(finish);
 
 //Alert based on time, since the above if function is not working.
